@@ -6,7 +6,10 @@ my_selfie=mp.solutions.selfie_segmentation
 cap=cv2.VideoCapture(0, cv2.CAP_DSHOW)
 # video_name="movie.mp4"
 # cap2=cv2.VideoCapture(video_name)
-BG_COLOR=(219,203,255)
+# BG_COLOR=(219,203,255)
+# BG_COLOR=(240,255,255)
+BG_COLOR=(188, 147, 102)
+
 with my_selfie.SelfieSegmentation(0) as selfie_segmentation:
   while True:
     ret, frame=cap.read()
@@ -39,10 +42,10 @@ with my_selfie.SelfieSegmentation(0) as selfie_segmentation:
     # cv2.imshow("results.segmentation_mask",results.segmentation_mask)
     # cv2.imshow("Th", th)
     # cv2.imshow("fg", fg) # muestra el fondo en color negro / y su parte mostrante tiene color
-    cv2.imshow("suma_de_frames", suma_de_frames)
-    cv2.imshow('Th_inv',th_inv)
+    cv2.imshow("suma de fondo", suma_de_frames)
+    cv2.imshow('Th_inv calculo matematico',th_inv)
     # cv2.imshow('titulo bg',bg) # muestra la parte visible en color negro / y su fondo tiene color
-    cv2.imshow("Frame", frame)
+    cv2.imshow("proyecto quita fondos frame", frame)
     if cv2.waitKey(1) & 0xFF == 27:
       break
 cap.release()
